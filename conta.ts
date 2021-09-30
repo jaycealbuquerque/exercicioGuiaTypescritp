@@ -1,5 +1,5 @@
 abstract class	Conta	{
-  private _numeroDaConta:	number;
+  private readonly _numeroDaConta:	number;
   titular:	string;
   private _saldo:	number;
   
