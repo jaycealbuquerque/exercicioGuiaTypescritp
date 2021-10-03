@@ -26,16 +26,23 @@ abstract class	Conta	{
   
 }
 
+interface Tributavel {
+  CalculaTributo(): number;
+}
 
 
 
-
-class	ContaPF	extends	Conta	{
+class	ContaPF	extends	Conta	implements Tributavel {
   cpf:	number;
   constructor(cpf:	number,	numeroDaConta:	number,	titular:	string,	saldo:	number)	{
     super(numeroDaConta,	titular,	saldo);
     this.cpf	=	cpf;
   }
+
+  CalculaTributo(): number {
+    return 100 // exemplo
+  }
+
   consultar():	string	{
     return	`Saldo	atual:	${this.consultaSaldo()}`;
   }
